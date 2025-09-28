@@ -20,8 +20,8 @@ export class User {
   password: string;
 
 
-  @Prop({ default: Role.ADMIN })
+  @Prop({ default: Role.STUDENT })
   role: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(User);
+export const UserSchema = SchemaFactory.createForClass(User);
