@@ -19,7 +19,7 @@ export class AuthService {
       ...registerUserDto,
       password: hashPassword,
     });
-    const payload = { sub: user._id };
+    const payload = { sub: user._id ,role:"admin"};
     const token = this.jwtService.sign(payload);
     return token;
   }
@@ -36,7 +36,7 @@ export class AuthService {
       throw new NotFoundException('Invalid email or password');
     }
 
-    const payload = { sub: user._id };
+    const payload = { sub: user._id ,role:"admin"};
     const token = this.jwtService.sign(payload);
     return token;
   }
